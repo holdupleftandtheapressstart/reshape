@@ -1,0 +1,53 @@
+name: CI pipeline
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Install Poetry
+      run: |
+        pipx install poetry
+
+    - name: Set up Python 3.10
+      uses: actions/setup-python@v4
+      with:
+          python-version: '3.10'
+          cache: poetry
+
+    - name: Install dependencies
+      run: |
+        poetry update
+
+    - name: Linting
+      run: |
+        poetry run ruff .
+
+    - name: Test with pytest
+      run: |
+        poetry run pytest
+
+    # Docker container
+    - name: Set up QEMU
+      uses: docker/setup-qemu-action@v2
+
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v2
+
+    - name: Build container
+      uses: docker/build-push-action@v4
+      with:
+        push: false
