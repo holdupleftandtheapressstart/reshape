@@ -5,7 +5,7 @@
 REST API for image management.
 
 | Path | Method | Description |
-|---|---|---|---|---|
+|---|---|---|
 | `/api/v1/images/upload` | `POST` | Upload binary images using `multipart/form-data` |
 | `/api/v1/images/` | `POST` | Create image using `url` |
 | `/api/v1/images/{image_id}` | `GET` | Get image metadata |
