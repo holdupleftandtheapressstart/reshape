@@ -1,5 +1,7 @@
 # Image Service
 
+[![CI pipeline](https://github.com/holdupleftandtheapressstart/reshape/actions/workflows/ci.yaml/badge.svg)](https://github.com/holdupleftandtheapressstart/reshape/actions/workflows/ci.yaml)
+
 REST API for image management.
 
 | Path | Method | Description |

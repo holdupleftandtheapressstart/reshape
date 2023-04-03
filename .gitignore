@@ -130,3 +130,6 @@ dmypy.json
 
 # Env
 .env
+
+# Local db
+*.db
