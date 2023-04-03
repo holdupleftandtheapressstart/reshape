@@ -95,6 +95,7 @@ $ poetry run pytest
 
 ## TODOs
 
+* Clean up exceptions and add custom error handler
 * Persistence layer should be block storage (S3, GCS, etc)
 * Metadata should be stored in a "proper" database (Postgres, MySQL, etc)
 * Some queue for async tasks (cropping, image processing)
