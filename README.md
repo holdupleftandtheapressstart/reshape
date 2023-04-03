@@ -13,12 +13,12 @@ REST API for image management.
 ## Design decisions
 
 * `FastAPI` as a web framework (async, type hints, swagger)
-* Store images on disk, metadata (name, location, hash) in `sqlite`. Simplest option given the scope of the project. 
+* Store images on disk, metadata (name, location, hash) in `sqlite`. Simplest option given the scope of the project.
 * Use [phash](https://www.phash.org/) for image comparison. I used it before and it works well.
 
 ## Prerequisites
 
-Install `poetry` 
+Install `poetry`
 
 ```bash
 $ curl -sSL https://install.python-poetry.org | python3 -
@@ -33,6 +33,7 @@ $ poetry update
 Install `pre-commit`:
 
 ```bash
+$ pip install --user virtualenv
 $ pip install --user pre-commit
 $ pre-commit install
 ```
